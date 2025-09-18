@@ -11,6 +11,8 @@ int main() {
     float area1;
     float pib1;
     int pontosturisticos1;
+    float densidadepop1;
+    float pibpercapita1;
 
     char estado2[2];
     char codigo2[4];
@@ -19,6 +21,8 @@ int main() {
     float area2;
     float pib2;
     int pontosturisticos2;
+    float densidadepop2;
+    float pibpercapita2;
 
     //Instruindo o usuário sobre como criar as cartas de acordo com as regras do jogo
 
@@ -27,6 +31,7 @@ int main() {
     printf("\nRegra número 1: O Estado deve ser somente uma letra de A à H.\n");
     printf("Regra número 2: O Código da carta deve ser a letra do estado em que ela se encontra juntamente com 01, 02, 03 ou 04. Exemplo: A01.\n");
     printf("Regra número 3: A cidade não pode ter nome composto, somente nome único.\n");
+    printf("Regra número 4: O PIB é convertido automaticamente para Bilhões, então insira o valor em dezenas ou centenas.\n");
     printf("\nTenha um bom jogo e divirta-se!\n");
 
     //Adicionado a Carta 1
@@ -114,8 +119,13 @@ int main() {
     printf("Nome da Cidade: %s\n", nomedacidade1);
     printf("População: %d\n", populacao1);
     printf("Área: %.2f km2", area1);
-    printf("\nPIB: %.2f reais", pib1);
+    printf("\nPIB: %.2f bilhões de reais", pib1);
     printf("\nNúmeros de Pontos Turísticos: %d\n", pontosturisticos1);
+    densidadepop1 = populacao1 / area1;
+    pibpercapita1 = (pib1 * 1000000000) / populacao1;
+    printf("Densidade Populacional: %.2f hab/km²", densidadepop1);
+    printf("\nPIB Per Capita: %.2f reais\n", pibpercapita1);
+    
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2[0]);
@@ -123,8 +133,12 @@ int main() {
     printf("Nome da Cidade: %s\n", nomedacidade2);
     printf("População: %d\n", populacao2);
     printf("Área: %.2f km²", area2);
-    printf("\nPIB: %.2f reais", pib2);
+    printf("\nPIB: %.2f bilhões de reais", pib2);
     printf("\nNúmeros de Pontos Turísticos: %d\n", pontosturisticos2);
+    densidadepop2 = populacao2 / area2;
+    pibpercapita2 = (pib2 * 1000000000) / populacao2;
+    printf("Densidade Populacional: %.2f hab/km²", densidadepop2);
+    printf("\nPIB Per Capita: %.2f reais\n", pibpercapita2);
 
     return 0;
 }
